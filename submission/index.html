@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="shortcut icon" href="images/logo white.png" type="image/x-icon">
     
+    
 </head>
 <body>
 
@@ -22,6 +23,7 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
+            <li><a href="#wishlist">Wishlist</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -82,7 +84,22 @@
     </div>
     
 </section>
+<section id="wishlist" class="wishlist">
+    <h2>Your Shoot Wishlist</h2>
+    <p class="wishlist-intro">
+        Click "+ Add to Wishlist" on any service above, or type your own shoot idea below.
+        Your list is saved automatically, even if you close the page.
+    </p>
 
+    <div class="wishlist-add">
+        <input type="text" id="wishlist-input" placeholder="e.g. Golden hour couple portraits">
+        <button type="button" id="wishlist-add-btn">Add to Wishlist</button>
+    </div>
+
+    <ul id="wishlist-list"></ul>
+    <p id="wishlist-empty" class="wishlist-empty"></p>
+    
+</section>
 
 <section id="portfolio" class="portfolio">
     <h2>Portfolio</h2>

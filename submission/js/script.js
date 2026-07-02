@@ -49,3 +49,75 @@ function renderServices() {
     container.appendChild(card);
   });
 }
+function addWishlistItem(name) {
+  const trimmed = name.trim();
+  if (trimmed === '') return;
+
+  const list = getWishlist();
+  list.push(trimmed);
+  saveWishlist(list);
+  renderWishlist();
+}
+
+function removeWishlistItem(index) {
+  const list = getWishlist();
+  list.splice(index, 1);
+  saveWishlist(list);
+  renderWishlist();
+}
+
+function renderWishlist() {
+  const ul = document.getElementById('wishlist-list');
+  const emptyMsg = document.getElementById('wishlist-empty');
+  if (!ul || !emptyMsg) return;
+
+  const list = getWishlist();
+  ul.innerHTML = '';
+
+  if (list.length === 0) {
+    emptyMsg.textContent = 'Your wishlist is empty. Add a service above or type your own idea below.';
+    return;
+  }
+
+  emptyMsg.textContent = '';
+
+  list.forEach((item, index) => {
+    const li = document.createElement('li');
+    li.className = 'wishlist-item';
+
+    const span = document.createElement('span');
+    span.textContent = item;
+
+    const removeBtn = document.createElement('button');
+    removeBtn.type = 'button';
+    removeBtn.className = 'remove-btn';
+    removeBtn.textContent = 'Remove';
+    removeBtn.addEventListener('click', () => {
+      li.remove();
+      removeWishlistItem(index);
+    });
+
+    li.appendChild(span);
+    li.appendChild(removeBtn);
+    ul.appendChild(li);
+  });
+}
+
+function setupWishlistInput() {
+  const input = document.getElementById('wishlist-input');
+  const btn = document.getElementById('wishlist-add-btn');
+  if (!input || !btn) return;
+
+  btn.addEventListener('click', () => {
+    addWishlistItem(input.value);
+    input.value = '';
+    input.focus();
+  });
+
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      btn.click();
+    }
+  });
+}
