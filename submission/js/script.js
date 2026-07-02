@@ -121,3 +121,44 @@ function setupWishlistInput() {
     }
   });
 }
+function setupContactForm() {
+  const form = document.getElementById('contact-form');
+  const feedback = document.getElementById('form-feedback');
+  if (!form || !feedback) return;
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const name = document.getElementById('cf-name').value.trim();
+    const email = document.getElementById('cf-email').value.trim();
+    const service = document.getElementById('cf-service').value;
+    const message = document.getElementById('cf-message').value.trim();
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const errors = [];
+
+    if (name === '') {
+      errors.push('Please enter your name.');
+    }
+    if (!emailPattern.test(email)) {
+      errors.push('Please enter a valid email address.');
+    }
+    if (service === '') {
+      errors.push('Please choose a service you\'re interested in.');
+    }
+    if (message === '') {
+      errors.push('Please write a short message.');
+    }
+
+    if (errors.length > 0) {
+      feedback.innerHTML = errors.join('<br>');
+      feedback.className = 'form-feedback error';
+      return;
+    }
+
+    feedback.textContent =
+      `Thanks, ${name}! Your enquiry about ${service} has been received — we'll reply to ${email} soon.`;
+    feedback.className = 'form-feedback success';
+    form.reset();
+  });
+}

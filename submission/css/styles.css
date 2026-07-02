@@ -349,3 +349,57 @@ footer{
     align-items:flex-start;
     gap:0.5rem;
 }
+.contact-form{
+    max-width:500px;
+    margin:2.5rem auto 0;
+    text-align:left;
+}
+
+.form-group{
+    margin-bottom:1.2rem;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:0.4rem;
+    font-weight:bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+    width:100%;
+    padding:0.7rem;
+    border-radius:6px;
+    border:none;
+    font-size:1rem;
+    font-family:inherit;
+}
+
+.contact-form button[type="submit"]{
+    background:gold;
+    color:#111;
+    border:none;
+    padding:0.75rem 1.5rem;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.contact-form button[type="submit"]:hover{
+    background:#e6c200;
+}
+
+.form-feedback{
+    margin-top:1rem;
+    font-weight:bold;
+}
+
+.form-feedback.error{
+    color:#ff6b6b;
+}
+
+.form-feedback.success{
+    color:#6bff8f;
+}

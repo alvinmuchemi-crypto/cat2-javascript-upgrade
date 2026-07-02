@@ -127,7 +127,39 @@
     <p>Email: alvinmuchemi@gmail.com</p>
     <p>Phone: +254 717647925</p>
     <p>Instagram: <a href="https://www.instagram.com/White_studios254" target="_blank">White_studios254</a></p>
+<form id="contact-form" class="contact-form" novalidate>
+    <div class="form-group">
+        <label for="cf-name">Name</label>
+        <input type="text" id="cf-name">
+    </div>
+
+    <div class="form-group">
+        <label for="cf-email">Email</label>
+        <input type="text" id="cf-email">
+    </div>
+
+    <div class="form-group">
+        <label for="cf-service">Service Interested In</label>
+        <select id="cf-service">
+            <option value="">-- Select a service --</option>
+            <option value="Photography">Photography</option>
+            <option value="Videography">Videography</option>
+            <option value="Live Streaming">Live Streaming</option>
+            <option value="Other">Other</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="cf-message">Message</label>
+        <textarea id="cf-message" rows="4"></textarea>
+    </div>
+
+    <button type="submit">Send Message</button>
+
+    <p id="form-feedback" class="form-feedback" role="status"></p>
+</form>
 </section>
+
 
 </main>
 
