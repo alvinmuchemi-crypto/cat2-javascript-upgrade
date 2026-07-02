@@ -162,3 +162,13 @@ function setupContactForm() {
     form.reset();
   });
 }
+const WISHLIST_KEY = 'whiteStudiosWishlist';
+
+function getWishlist() {
+  const saved = localStorage.getItem(WISHLIST_KEY);
+  return saved ? JSON.parse(saved) : [];
+}
+
+function saveWishlist(list) {
+  localStorage.setItem(WISHLIST_KEY, JSON.stringify(list));
+}
