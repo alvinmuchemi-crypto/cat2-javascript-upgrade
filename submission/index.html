@@ -7,14 +7,11 @@
 
     <link rel="stylesheet" href="css/styles.css">
     <link rel="shortcut icon" href="images/logo white.png" type="image/x-icon">
-    
-    
 </head>
 <body>
 
 <header>
     <div class="logo">
-        
         <h1>White Studios</h1>
     </div>
 
@@ -33,12 +30,18 @@
 <main>
 
 <section id="home" class="hero">
-    <img src="images/banner.png"
+    <img id="banner-img" src="images/banner.png"
          alt="Professional photographer covering an event">
 
     <div class="hero-text">
         <h2>Professional Photography & Videography</h2>
         <p>Capturing moments. Telling stories. Creating memories.</p>
+    </div>
+
+    <div class="hero-caption" id="hero-caption">
+        <p>📸 White Studios was founded in 2018 by Alvin White. Since then we've covered
+        200+ weddings, corporate events, and documentaries across Kenya. Click the photo
+        anytime to show or hide this note.</p>
     </div>
 </section>
 
@@ -55,35 +58,9 @@
 <section id="services" class="services">
     <h2>Services</h2>
 
-    <div class="service-container">
-
-        <article class="card">
-            <h3>Photography</h3>
-            <p>
-                Event photography, portraits, conferences,
-                weddings, and commercial shoots.
-            </p>
-        </article>
-
-        <article class="card">
-            <h3>Videography</h3>
-            <p>
-                Professional video production, documentaries,
-                interviews, and promotional content.
-            </p>
-        </article>
-
-        <article class="card">
-            <h3>Live Streaming</h3>
-            <p>
-                Multi-platform live streaming for events,
-                conferences, and church services.
-            </p>
-        </article>
-
-    </div>
-    
+    <div class="service-container" id="service-container"></div>
 </section>
+
 <section id="wishlist" class="wishlist">
     <h2>Your Shoot Wishlist</h2>
     <p class="wishlist-intro">
@@ -98,7 +75,6 @@
 
     <ul id="wishlist-list"></ul>
     <p id="wishlist-empty" class="wishlist-empty"></p>
-    
 </section>
 
 <section id="portfolio" class="portfolio">
@@ -127,48 +103,46 @@
     <p>Email: alvinmuchemi@gmail.com</p>
     <p>Phone: +254 717647925</p>
     <p>Instagram: <a href="https://www.instagram.com/White_studios254" target="_blank">White_studios254</a></p>
-<form id="contact-form" class="contact-form" novalidate>
-    <div class="form-group">
-        <label for="cf-name">Name</label>
-        <input type="text" id="cf-name">
-    </div>
 
-    <div class="form-group">
-        <label for="cf-email">Email</label>
-        <input type="text" id="cf-email">
-    </div>
+    <form id="contact-form" class="contact-form" novalidate>
+        <div class="form-group">
+            <label for="cf-name">Name</label>
+            <input type="text" id="cf-name">
+        </div>
 
-    <div class="form-group">
-        <label for="cf-service">Service Interested In</label>
-        <select id="cf-service">
-            <option value="">-- Select a service --</option>
-            <option value="Photography">Photography</option>
-            <option value="Videography">Videography</option>
-            <option value="Live Streaming">Live Streaming</option>
-            <option value="Other">Other</option>
-        </select>
-    </div>
+        <div class="form-group">
+            <label for="cf-email">Email</label>
+            <input type="text" id="cf-email">
+        </div>
 
-    <div class="form-group">
-        <label for="cf-message">Message</label>
-        <textarea id="cf-message" rows="4"></textarea>
-    </div>
+        <div class="form-group">
+            <label for="cf-service">Service Interested In</label>
+            <select id="cf-service">
+                <option value="">-- Select a service --</option>
+                <option value="Photography">Photography</option>
+                <option value="Videography">Videography</option>
+                <option value="Live Streaming">Live Streaming</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
 
-    <button type="submit">Send Message</button>
+        <div class="form-group">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" rows="4"></textarea>
+        </div>
 
-    <p id="form-feedback" class="form-feedback" role="status"></p>
-</form>
+        <button type="submit">Send Message</button>
+
+        <p id="form-feedback" class="form-feedback" role="status"></p>
+    </form>
 </section>
-
 
 </main>
 
 <footer>
     <p>&copy; 2026 White Studios. All Rights Reserved.</p>
 </footer>
-   <script src="js/script.js"></script>
-    <script>
-        console.log('Hello! from an embedded JS code ');
-    </script>
+
+<script src="js/script.js"></script>
 </body>
 </html>

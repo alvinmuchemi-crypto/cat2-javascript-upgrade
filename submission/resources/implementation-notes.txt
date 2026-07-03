@@ -1,0 +1,12 @@
+
+
+1. Loop-rendered dynamic content  — Service offerings (Photography, Videography, Live Streaming) are stored as a JS array of objects, each with `name`, `description`, and `price`. `renderServices()` uses `forEach()` and `createElement()`/`appendChild()` to build each card and insert it into `#service-container`, replacing what used to be hardcoded HTML.
+
+2. Dynamically add & remove elements — A "Your Shoot Wishlist" section lets users add items either by clicking "+ Add to Wishlist" on a service card or typing a custom idea into an input field and clicking "Add to Wishlist." Each entry is created with `createElement()`/`appendChild()` and rendered as a list item with its own "Remove" button, which deletes it from the page using `.remove()`.
+
+3. Form handling with validation feedback — The Contact section includes a form (name, email, service, message). On submit, `event.preventDefault()` stops the page reload, and JS reads each field's `.value` to check that it isn't empty and that the email matches a valid pattern. Errors or a success message are written back to the page via `textContent`/`innerHTML` in a dedicated feedback area — validation is handled entirely in JS, not via the HTML `required` attribute.
+
+4. Persistent state with localStorage — The wishlist is saved to `localStorage` (`getWishlist()` / `saveWishlist()`) every time an item is added or removed, so the list is restored automatically if the page is reloaded or closed and reopened.
+
+5. Click-to-reveal on the banner — Clicking the hero banner image toggles a `visible` class on a hidden caption panel using `classList.toggle()`, revealing a short bio about the studio. Clicking again hides it.
+

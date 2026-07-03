@@ -1,3 +1,11 @@
+document.addEventListener('DOMContentLoaded', () => {
+  renderServices();
+  renderWishlist();
+  setupWishlistInput();
+  setupContactForm();
+  setupBannerReveal();
+});
+
 const services = [
   {
     name: "Photography",
@@ -49,6 +57,7 @@ function renderServices() {
     container.appendChild(card);
   });
 }
+
 function addWishlistItem(name) {
   const trimmed = name.trim();
   if (trimmed === '') return;
@@ -121,6 +130,7 @@ function setupWishlistInput() {
     }
   });
 }
+
 function setupContactForm() {
   const form = document.getElementById('contact-form');
   const feedback = document.getElementById('form-feedback');
@@ -162,6 +172,7 @@ function setupContactForm() {
     form.reset();
   });
 }
+
 const WISHLIST_KEY = 'whiteStudiosWishlist';
 
 function getWishlist() {
@@ -171,4 +182,14 @@ function getWishlist() {
 
 function saveWishlist(list) {
   localStorage.setItem(WISHLIST_KEY, JSON.stringify(list));
+}
+
+function setupBannerReveal() {
+  const banner = document.getElementById('banner-img');
+  const caption = document.getElementById('hero-caption');
+  if (!banner || !caption) return;
+
+  banner.addEventListener('click', () => {
+    caption.classList.toggle('visible');
+  });
 }

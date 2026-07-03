@@ -403,3 +403,26 @@ footer{
 .form-feedback.success{
     color:#6bff8f;
 }
+#banner-img{
+    cursor:pointer;
+}
+
+.hero-caption{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    background:rgba(0,0,0,0.75);
+    color:white;
+    padding:1.5rem 8%;
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(20px);
+    transition:0.35s ease;
+}
+
+.hero-caption.visible{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+}
